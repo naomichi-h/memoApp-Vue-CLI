@@ -1,7 +1,7 @@
 <template>
   <ul class="item-wrap">
     <li class="item" v-for="(memo, index) in memos" v-bind:key="memo.id" @click="editMemoStart(memo, index)" v-bind:class="{ editActive: isActive(index) }">
-      {{ memo.text.split(/\r\n|\r|\n/)[0] }}
+      {{ memoFirstline(memo.text) }}
     </li>
     <CreateMemo />
   </ul>
@@ -19,22 +19,13 @@ export default {
     memos () {
       return this.$store.state.memos
     },
-    editFlg () {
-      return this.$store.state.editFlg
-    },
-    editBody () {
-      return this.$store.state.editBody
-    },
-    editMemoId () {
-      return this.$store.state.editMemoId
-    },
-    editMemoIndex () {
-      return this.$store.state.editMemoIndex
+    memoFirstline: () => (item) => {
+      return item.split(/\r\n|\r|\n/)[0]
     }
   },
   methods: {
     editMemoStart (memo, index) {
-      this.$store.commit('editFlgOn')
+      this.$store.commit('editModeOn')
       this.$store.commit('editBodySetter', {
         editBody: memo.text
       })
@@ -48,11 +39,10 @@ export default {
     isActive (index) {
       return this.$store.state.editMemoIndex === index
     }
-
   }
 }
-
 </script>
+
 <style scoped>
 .item-wrap {
   background: #2b2b2b;

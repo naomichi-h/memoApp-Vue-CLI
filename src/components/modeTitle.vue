@@ -1,5 +1,5 @@
 <template>
-  <h2 class="mode-title" v-if="editFlg">編集</h2>
+  <h2 class="mode-title" v-if="editMode">編集</h2>
   <h2 class="mode-title" v-else>一覧</h2>
 </template>
 
@@ -7,8 +7,8 @@
 export default {
   name: 'ModeTitle',
   computed: {
-    editFlg () {
-      return this.$store.state.editFlg
+    editMode () {
+      return this.$store.state.editMode
     }
   }
 }

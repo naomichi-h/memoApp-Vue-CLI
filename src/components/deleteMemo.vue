@@ -8,7 +8,7 @@ export default {
   methods: {
     deleteMemo () {
       this.$store.commit('deleteMemo')
-      this.$store.commit('editFlgOff')
+      this.$store.commit('editModeOff')
     }
   }
 }
@@ -24,5 +24,6 @@ export default {
   color: #d4d5d6;
   font-weight: bold;
   cursor: pointer;
-  background: #000;}
+  background: #000;
+}
 </style>

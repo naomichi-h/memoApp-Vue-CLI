@@ -1,5 +1,5 @@
 <template>
-  <div class="form" v-show="editFlg">
+  <div class="form" v-show="editMode">
     <textarea class="textarea" rows="20" v-model="editBody" v-focus="editBody" ></textarea>
     <div class="btn-wrap">
       <EditMemo class="btn-edit"/>
@@ -19,8 +19,8 @@ export default {
     DeleteMemo
   },
   computed: {
-    editFlg () {
-      return this.$store.state.editFlg
+    editMode () {
+      return this.$store.state.editMode
     },
     editBody: {
       get () {

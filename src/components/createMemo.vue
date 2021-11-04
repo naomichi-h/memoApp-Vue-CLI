@@ -7,7 +7,7 @@ export default {
   name: 'CreateMemo',
   methods: {
     addMemo () {
-      this.$store.commit('editFlgOn')
+      this.$store.commit('editModeOn')
       this.$store.commit('addMemo')
     }
   }
@@ -20,7 +20,5 @@ export default {
   font-weight: bold;
   cursor: pointer;
   padding: 8px 0;
-
 }
-
 </style>

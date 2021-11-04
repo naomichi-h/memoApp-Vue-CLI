@@ -16,7 +16,7 @@ const store = new Vuex.Store({
       }
     ],
     // nextMemoId: 2,
-    editFlg: false,
+    editMode: false,
     editBody: '',
     editMemoId: null,
     editMemoIndex: null
@@ -40,11 +40,11 @@ const store = new Vuex.Store({
     deleteMemo (state) {
       state.memos.splice(state.editMemoIndex, 1)
     },
-    editFlgOn (state) {
-      state.editFlg = true
+    editModeOn (state) {
+      state.editMode = true
     },
-    editFlgOff (state) {
-      state.editFlg = false
+    editModeOff (state) {
+      state.editMode = false
     },
     editBodySetter (state, payload) {
       state.editBody = payload.editBody
