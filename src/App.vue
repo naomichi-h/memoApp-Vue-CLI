@@ -56,17 +56,3 @@ export default {
   padding: 16px;
 }
 </style>
-
-<style>
-html, body {
-  height: 100%;
-  background: #3f3f3f;
-}
-ul {
-  margin: 0;
-  padding: 0;
-}
-li {
-  list-style: none;
-}
-</style>

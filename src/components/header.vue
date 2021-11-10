@@ -1,5 +1,5 @@
 <template>
-    <h1 class="app-title">memo app</h1>
+  <h1 class="app-title">memo app</h1>
 </template>
 
 <style scoped>
